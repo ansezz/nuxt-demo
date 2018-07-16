@@ -4,6 +4,9 @@
   "description": "Nuxt.js project",
   "author": "Anass Ez-Zouaine <ans-ezzouaine@hotmail.com>",
   "private": true,
+  "engines": {
+    "yarn": "1.7.0"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
