@@ -5,7 +5,8 @@
   "author": "Anass Ez-Zouaine <ans-ezzouaine@hotmail.com>",
   "private": true,
   "engines": {
-    "yarn": "1.7.0"
+    "yarn": "1.7.0",
+    "nuxt": "1.4.1"
   },
   "scripts": {
     "dev": "nuxt",
