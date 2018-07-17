@@ -19,4 +19,12 @@ $ npm start
 $ npm run generate
 ```
 
+## Demo 
+https://nuxt-demo-aio.herokuapp.com/
+
+try this app in mobile device and desktop device 
+each one have a different views and layout 
+
+
+### docs
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
