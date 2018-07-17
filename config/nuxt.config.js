@@ -3,16 +3,16 @@ module.exports = {
     'nuxt-device-detect',
   ],
   router: {
-    middleware: 'device',
+    middleware: [],
     extendRoutes(routes, resolve) {
       /* routes.push({
         name: 'test.index',
         path: '/test/index',
         component: resolve(__dirname, 'test/index.vue')
       }) */
-      for (i = 0; i < routes.length; i++) {
+      /* for (i = 0; i < routes.length; i++) {
         console.log(routes[i].component)
-      }
+      } */
     }
   },
   css: [],
@@ -45,6 +45,10 @@ module.exports = {
     ** Run ESLint on save
     */
     extend(config, {isDev, isClient}) {
+
+      // @TODO : add custom alisa
+      // config.resolve.alias['myAlias']= path.join(this.options.srcDir, 'myPath')
+
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',

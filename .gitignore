@@ -12,3 +12,6 @@ dist
 
 
 .idea/
+desktop-dist/
+mobile-dist/
+
