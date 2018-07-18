@@ -1,21 +1,15 @@
 module.exports = {
   modules: [
+    '@nuxtjs/axios',
     'nuxt-device-detect',
+    'nuxt-buefy',
   ],
   router: {
     middleware: 'device',
-    extendRoutes(routes, resolve) {
-      /* routes.push({
-        name: 'test.index',
-        path: '/test/index',
-        component: resolve(__dirname, 'test/index.vue')
-      }) */
-      for (i = 0; i < routes.length; i++) {
-        console.log(routes[i].component)
-      }
-    }
   },
-  css: [],
+  css: [
+
+  ],
   /*
   ** Headers of the page
   */
@@ -27,8 +21,12 @@ module.exports = {
       {hid: 'description', name: 'description', content: 'Nuxt.js project'}
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
-    ]
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'}
+    ],
+    script: [
+
+    ],
   },
   /*
   ** Customize the progress bar color
@@ -44,15 +42,5 @@ module.exports = {
     /*
     ** Run ESLint on save
     */
-    extend(config, {isDev, isClient}) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
   }
 }

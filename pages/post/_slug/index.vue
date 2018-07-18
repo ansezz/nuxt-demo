@@ -3,28 +3,23 @@
 </template>
 
 <script>
-
   export default {
     layout: (ctx) => ctx.isMobile ? 'mobile' : 'desktop',
-    components: {},
     beforeCreate() {
+      // Load the needed data in this page
+      this.$store.dispatch('news/LOAD_POST_CURRENT',{ slug: this.$route.params.slug})
+
       if (this.$device.isMobile) {
         this.component = () => ({
-          component: import(`~/views/m/category/index.vue`)
+          component: import(`~/views/mobile/post.vue`)
         })
       } else {
         this.component = () => ({
-          component: import(`~/views/category/index.vue`)
+          component: import(`~/views/web/post.vue`)
         })
       }
     },
-    asyncData(context) {
-      // called every time before loading the component
-      // global
-    },
-    fetch() {
-      // The `fetch` method is used to fill the store before rendering the page
-    }
+    components: {}
   }
 </script>
 

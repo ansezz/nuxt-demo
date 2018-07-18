@@ -6,13 +6,16 @@
   export default {
     layout: (ctx) => ctx.isMobile ? 'mobile' : 'desktop',
     beforeCreate() {
+      // Load the needed data in this page
+      this.$store.dispatch('news/LOAD_NEWS_LATEST')
+
       if (this.$device.isMobile) {
         this.component = () => ({
-          component: import(`~/views/m/category/index.vue`)
+          component: import(`~/views/mobile/home.vue`)
         })
       } else {
         this.component = () => ({
-          component: import(`~/views/category/index.vue`)
+          component: import(`~/views/web/home.vue`)
         })
       }
     },
