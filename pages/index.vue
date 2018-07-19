@@ -6,25 +6,17 @@
   export default {
     layout: (ctx) => ctx.isMobile ? 'mobile' : 'desktop',
 
-    async fetch({ store, params }){
+    async fetch({store, params}) {
       await store.dispatch('news/LOAD_NEWS_LATEST')
     },
-    
+
     beforeCreate() {
-      // Load the needed data in this page
-
-
-      if (this.$device.isMobile) {
-        this.component = () => ({
-          component: import(`~/views/mobile/home.vue`)
-        })
-      } else {
-        this.component = () => ({
-          component: import(`~/views/web/home.vue`)
-        })
-      }
+      this.component = this.$device.isMobile ? 'mobile' : 'desktop'
     },
-    components: {}
+    components: {
+      mobile: () => import(`~/views/mobile/home.vue`),
+      desktop: () => import(`~/views/web/home.vue`)
+    }
   }
 </script>
 
