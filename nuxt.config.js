@@ -3,18 +3,28 @@ module.exports = {
     '@nuxtjs/axios',
     'nuxt-device-detect',
     'nuxt-buefy',
+    '@nuxtjs/pwa'
   ],
+  manifest: {
+    name: 'Nuxt Demo',
+    short_name: 'NuxtDemo',
+    title: 'Nuxt Demo Title',
+    'og:title': 'Nuxt Demo ogTitle',
+    description: 'Nuxt Demo  appDescription',
+    'og:description': 'Nuxt Demo  ogDescription',
+    lang: 'en',
+    theme_color: '#42b883',
+    background_color: '#35495e'
+  },
   router: {
     //middleware: 'device',
   },
-  css: [
-
-  ],
+  css: [],
   /*
   ** Headers of the page
   */
   head: {
-    title: 'nuxt-demo',
+    title: 'Nuxt Demo',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
@@ -24,9 +34,7 @@ module.exports = {
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'}
     ],
-    script: [
-
-    ],
+    script: [],
   },
   /*
   ** Customize the progress bar color
