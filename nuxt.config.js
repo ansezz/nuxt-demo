@@ -38,11 +38,11 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {
-    vendor: ['vue-i18n']
-  },
-
-  plugins: ['~/plugins/index.js']
+  // build: {
+  //   vendor: ['vue-i18n']
+  // },
+  //
+  // plugins: ['~/plugins/index.js']
 
 
 }

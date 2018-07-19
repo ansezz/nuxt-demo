@@ -4,28 +4,23 @@
 
 <script>
   export default {
-    middleware: ['device'],
     layout: (ctx) => ctx.isMobile ? 'mobile' : 'desktop',
 
     async fetch({ store, params }){
       await store.dispatch('news/LOAD_POST_CURRENT',{ slug: params.slug})
     },
-    data(){
-      return {
-        component: ''
-      }
-    },
+
     beforeCreate() {
 
-      // if (this.$device.isMobile) {
-      //   this.component = () => ({
-      //     component: import(`~/views/mobile/post.vue`)
-      //   })
-      // } else {
-      //   this.component = () => ({
-      //     component: import(`~/views/web/post.vue`)
-      //   })
-      // }
+      if (this.$device.isMobile) {
+        this.component = () => ({
+          component: import(`~/views/mobile/post.vue`)
+        })
+      } else {
+        this.component = () => ({
+          component: import(`~/views/web/post.vue`)
+        })
+      }
     },
     head () {
       return {
