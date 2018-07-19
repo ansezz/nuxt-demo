@@ -1,9 +1,11 @@
+
 export const state = () => ({
-  counter: 0
+  platform: '',
 })
 
 export const mutations = {
-  increment (state) {
-    state.counter++
-  }
+  //Set the latest news to state
+  SET_PLATFORM: (state, { platform }) => {
+    state.platform = platform
+  },
 }

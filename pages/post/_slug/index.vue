@@ -1,18 +1,13 @@
 <template>
-  <component :is="component"/>
+  <component :is="this.$store.state.platform"/>
 </template>
 
 <script>
   export default {
-    layout: (ctx) => ctx.isMobile ? 'mobile' : 'desktop',
+    layout: ({ store }) => store.state.platform,
 
-    async fetch({store, params}) {
-      await store.dispatch('news/LOAD_POST_CURRENT', {slug: params.slug})
-    },
+    middleware: ['post'],
 
-    beforeCreate() {
-      this.component = this.$device.isMobile ? 'mobile' : 'desktop'
-    },
     components: {
       mobile: () => import(`~/views/mobile/post.vue`),
       desktop: () => import(`~/views/web/post.vue`)
