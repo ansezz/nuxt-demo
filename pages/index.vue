@@ -5,14 +5,22 @@
 <script>
   export default {
     layout: (ctx) => ctx.isMobile ? 'mobile' : 'desktop',
+
+    async fetch({ store, params }){
+      await store.dispatch('news/LOAD_NEWS_LATEST')
+    },
+    
     beforeCreate() {
+      // Load the needed data in this page
+
+
       if (this.$device.isMobile) {
         this.component = () => ({
-          component: import(`~/views/m/category/index.vue`)
+          component: import(`~/views/mobile/home.vue`)
         })
       } else {
         this.component = () => ({
-          component: import(`~/views/category/index.vue`)
+          component: import(`~/views/web/home.vue`)
         })
       }
     },

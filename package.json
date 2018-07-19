@@ -18,7 +18,9 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
     "nuxt": "^1.0.0",
+    "nuxt-buefy": "^0.1.0",
     "nuxt-device-detect": "^1.1.1"
   },
   "devDependencies": {

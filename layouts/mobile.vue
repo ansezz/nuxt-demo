@@ -1,44 +1,34 @@
 <template>
   <div>
+
     <header>
-      <div>Menu Mobile</div>
-      <ul>
-        <li>
-          <nuxt-link to="/">Home page</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/slug-demo">slug demo</nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/category/test-category">slug category</nuxt-link>
-        </li>
-      </ul>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <h2 class="title is-4">The Media</h2>
+          </a>
+          <a class="navbar-item bd-navbar-item-documentation  is-active" href="/">
+              Accueil
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      </nav>
     </header>
     <main>
       <nuxt/>
     </main>
-    <footer>Footer Mobile</footer>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Media Nuxt</strong> by <a href="https://github.com/ansezz">Anass Ez-Zouaine</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
-
-<style>
-  html {
-    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    word-spacing: 1px;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
-  }
-
-  *, *:before, *:after {
-    box-sizing: border-box;
-    margin: 0;
-  }
-
-  body {
-    background-color: #dbe1ec;
-  }
-</style>
