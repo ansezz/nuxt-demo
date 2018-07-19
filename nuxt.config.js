@@ -5,7 +5,7 @@ module.exports = {
     'nuxt-buefy',
   ],
   router: {
-    middleware: 'device',
+    //middleware: 'device',
   },
   css: [
 
@@ -39,8 +39,10 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** Run ESLint on save
-    */
-  }
+    vendor: ['vue-i18n']
+  },
+
+  plugins: ['~/plugins/index.js']
+
+
 }

@@ -5,9 +5,14 @@
 <script>
   export default {
     layout: (ctx) => ctx.isMobile ? 'mobile' : 'desktop',
+
+    async fetch({ store, params }){
+      await store.dispatch('news/LOAD_NEWS_LATEST')
+    },
+    
     beforeCreate() {
       // Load the needed data in this page
-      this.$store.dispatch('news/LOAD_NEWS_LATEST')
+
 
       if (this.$device.isMobile) {
         this.component = () => ({

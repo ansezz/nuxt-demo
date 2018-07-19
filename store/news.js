@@ -20,14 +20,14 @@ export const mutations = {
 
 export const actions = {
   //Get the latest news
-  LOAD_NEWS_LATEST:function ({ commit }) {
-    news.latest().then(({data}) => {
+  async LOAD_NEWS_LATEST ({ commit }) {
+    await news.latest().then(({data}) => {
       commit('SET_NEWS_LATEST', { list: data })
     })
   },
 
-  LOAD_POST_CURRENT:function ({ commit }, { slug }) {
-    news.singular(slug).then(({data}) => {
+  async LOAD_POST_CURRENT ({ commit }, { slug }) {
+    await news.singular(slug).then(({data}) => {
       commit('SET_POST_CURRENT', { list: data })
     })
   },

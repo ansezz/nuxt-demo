@@ -4,22 +4,37 @@
 
 <script>
   export default {
+    middleware: ['device'],
     layout: (ctx) => ctx.isMobile ? 'mobile' : 'desktop',
-    beforeCreate() {
-      // Load the needed data in this page
-      this.$store.dispatch('news/LOAD_POST_CURRENT',{ slug: this.$route.params.slug})
 
-      if (this.$device.isMobile) {
-        this.component = () => ({
-          component: import(`~/views/mobile/post.vue`)
-        })
-      } else {
-        this.component = () => ({
-          component: import(`~/views/web/post.vue`)
-        })
+    async fetch({ store, params }){
+      await store.dispatch('news/LOAD_POST_CURRENT',{ slug: params.slug})
+    },
+    data(){
+      return {
+        component: ''
       }
     },
-    components: {}
+    beforeCreate() {
+
+      // if (this.$device.isMobile) {
+      //   this.component = () => ({
+      //     component: import(`~/views/mobile/post.vue`)
+      //   })
+      // } else {
+      //   this.component = () => ({
+      //     component: import(`~/views/web/post.vue`)
+      //   })
+      // }
+    },
+    head () {
+      return {
+        title: this.$store.state.news.current_post.title,
+        meta: [
+          { hid: 'description', name: 'description', content: this.$store.state.news.current_post.title }
+        ]
+      }
+    }
   }
 </script>
 
