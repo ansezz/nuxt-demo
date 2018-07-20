@@ -16,3 +16,5 @@ dist
 sw.*
 
 package-lock.json
+
+.monitor

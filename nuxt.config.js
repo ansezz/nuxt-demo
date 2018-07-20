@@ -9,7 +9,8 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/webpackmonitor'
   ],
   sitemap: {
     path: '/sitemap.xml',
@@ -80,6 +81,12 @@ module.exports = {
   //   vendor: ['vue-i18n']
   // },
   //
-  plugins: ['~/plugins/http']
-
+  plugins: ['~/plugins/http'],
+  webpackMonitor: {
+    capture: true, // -> default 'true'
+    // target: '../monitor/myStatsStore.json', // default -> '../monitor/stats.json'
+    launch: true, // -> default 'false'
+    port: 3030, // default -> 8081
+    excludeSourceMaps: true // default 'true'
+  }
 }
