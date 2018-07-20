@@ -17,7 +17,7 @@ module.exports = {
     background_color: '#35495e'
   },
   router: {
-    middleware: 'device',
+    middleware: 'platform',
   },
   css: [],
   /*
