@@ -105,6 +105,10 @@
   dependencies:
     vue-analytics "^5.4.0"
 
+"@nuxtjs/google-tag-manager@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/google-tag-manager/-/google-tag-manager-2.0.0.tgz#94052aecab59427ddf854689d635ea5782b0ba0b"
+
 "@nuxtjs/icon@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/icon/-/icon-2.1.0.tgz#d06ff69778d54a65506a39862fe12ab2bba627b5"

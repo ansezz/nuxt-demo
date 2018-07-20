@@ -13,6 +13,8 @@ module.exports = {
     '@nuxtjs/webpackmonitor',
     // @TODO enable component cache only in prod
     // ['@nuxtjs/component-cache', {maxAge: 1000 * 60 * 60}],
+    ['@nuxtjs/google-tag-manager', {id: process.env.GOOGLE_TAG_MANAGER}],
+
   ],
   sitemap: {
     path: '/sitemap.xml',
