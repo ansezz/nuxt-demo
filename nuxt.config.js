@@ -5,6 +5,13 @@ module.exports = {
     'nuxt-buefy',
     '@nuxtjs/pwa'
   ],
+  axios: {
+    baseURL: 'http://medi1news.nextmedia.ma/api',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest'
+    },
+    withCredentials: false,
+  },
   manifest: {
     name: 'Nuxt Demo',
     short_name: 'NuxtDemo',
@@ -50,7 +57,6 @@ module.exports = {
   //   vendor: ['vue-i18n']
   // },
   //
-  // plugins: ['~/plugins/index.js']
-
+  plugins: ['~/plugins/http']
 
 }
