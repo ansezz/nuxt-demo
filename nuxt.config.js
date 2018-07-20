@@ -86,6 +86,7 @@ module.exports = {
   // },
   //
   plugins: ['~/plugins/http'],
+  // yarn nuxt build --webpackmonitor --analyze
   webpackMonitor: {
     capture: true, // -> default 'true'
     // target: '../monitor/myStatsStore.json', // default -> '../monitor/stats.json'
