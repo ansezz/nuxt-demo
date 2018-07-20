@@ -6,8 +6,12 @@ module.exports = {
     'nuxt-device-detect',
     'nuxt-buefy',
     '@nuxtjs/pwa',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/google-analytics'
   ],
+  'google-analytics': {
+    id: process.env.GOOGLE_ANALYTICS
+  },
   axios: {
     baseURL: process.env.API_URL,
     headers: {
