@@ -10,7 +10,9 @@ module.exports = {
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics',
     '@nuxtjs/sitemap',
-    '@nuxtjs/webpackmonitor'
+    '@nuxtjs/webpackmonitor',
+    // @TODO enable component cache only in prod
+    // ['@nuxtjs/component-cache', {maxAge: 1000 * 60 * 60}],
   ],
   sitemap: {
     path: '/sitemap.xml',
