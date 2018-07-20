@@ -1,12 +1,15 @@
+require('dotenv').config()
+
 module.exports = {
   modules: [
     '@nuxtjs/axios',
     'nuxt-device-detect',
     'nuxt-buefy',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
   ],
   axios: {
-    baseURL: 'http://medi1news.nextmedia.ma/api',
+    baseURL: process.env.API_URL,
     headers: {
       'X-Requested-With': 'XMLHttpRequest'
     },

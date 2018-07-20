@@ -1,4 +1,4 @@
-const DEFAULT_LANG = 'fr'
+import { DEFAULT_LANG } from '~/config'
 
 export default ({app}) => {
 
